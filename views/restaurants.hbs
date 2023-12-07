@@ -1,0 +1,45 @@
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Borough</th>
+                <th>Cuisine</th>
+                <th>Building</th>
+                <th>Street</th>
+                <th>Zipcode</th>
+                <th>Restaurant ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each restaurants}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.borough}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>{{this.address.building}}</td>
+                <td>{{this.address.street}}</td>
+                <td>{{this.address.zipcode}}</td>
+                <td>{{this.restaurant_id}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
