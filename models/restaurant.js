@@ -61,4 +61,20 @@ Restaurant.getTopRestaurants = function(borough) {
     return Restaurant.find({ borough: borough }).sort({ 'grades.score': -1 }).limit(5).exec();
 }
 
+// a method to retrieve restaurants by page, perPage, and borough
+RestaurantSchema.statics.getRestaurantsByPage = async function(page, perPage, borough) {
+    const skip = (page - 1) * perPage;
+    const query = borough ? { borough } : {};
+
+    try {
+        const restaurants = await this.find(query)
+            .skip(skip)
+            .limit(perPage)
+            .exec();
+
+        return restaurants;
+    } catch (err) {
+        throw err;
+    }
+};
 module.exports = Restaurant;

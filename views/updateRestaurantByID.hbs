@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Update Restaurant</h1>
+    <form action="/api/restaurants/update" method="GET">
+        <input type="hidden" name="token" value="{{token}}">
+        <label for="restaurantId">Enter Restaurant ID:</label><br>
+        <input type="text" id="restaurantId" name="restaurantId"><br>
+        <input type="submit" value="Update Restaurant">
+    </form>
+</body>
+</html>

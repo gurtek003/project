@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken'); // Import jsonwebtoken
 const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
@@ -27,7 +28,14 @@ UserSchema.pre('save', function(next) {
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) return cb(err);
-        cb(null, isMatch);
+        if (isMatch) {
+            // Passwords match
+            const token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); // Sign the token with the user's _id and your secret key
+            cb(null, isMatch, token); // Pass the token along with the isMatch flag
+        } else {
+            // Passwords don't match
+            cb(null, isMatch);
+        }
     });
 };
 

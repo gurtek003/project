@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Get Restaurants</title>
     <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-    <form action="/api/restaurants" method="get">
+    <h1>Get Restaurants by Page, Per Page, and Borough</h1>
+    <form action="/api/restaurants/restaurants-result" method="GET">
         <input type="hidden" name="token" value="{{token}}"> <!-- Add this line -->
         <label for="page">Page:</label><br>
         <input type="number" id="page" name="page"><br>
         <label for="perPage">Per Page:</label><br>
         <input type="number" id="perPage" name="perPage"><br>
         <label for="borough">Borough:</label><br>
-        <input type="text" id="borough" name="borough"><br>
-        <input type="submit" value="Submit">
+        <input type="text" id="borough" name="borough"><br><br>
+        <input type="submit" value="Get Restaurants">
     </form>
 </body>
 </html>

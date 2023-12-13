@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Restaurant by ID</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Get Restaurant by ID</h1>
+    <form action="/api/restaurants/searchbyid" method="POST">
+        <input type="hidden" name="token" value="{{token}}"> <!-- Add this line -->
+        <label for="restaurantId">Enter Restaurant ID:</label><br>
+        <input type="text" id="restaurantId" name="id"><br>
+        <input type="submit" value="Get Restaurant">
+    </form>
+</body>
+</html>

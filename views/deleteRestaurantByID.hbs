@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Restaurant by ID</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Delete Restaurant by ID</h1>
+    <form action="/api/restaurants/deletebyid" method="POST">
+        <input type="hidden" name="token" value="{{token}}"> 
+        <label for="restaurantId">Enter Restaurant ID:</label><br>
+        <input type="text" id="restaurantId" name="id"><br>
+        <input type="submit" value="Delete Restaurant">
+    </form>
+</body>
+</html>

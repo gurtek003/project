@@ -1,0 +1,55 @@
+{{!-- <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Update Restaurant</title>
+</head>
+<body>
+    <h1>Update Restaurant Data</h1>
+    <form action="/api/restaurants/update" method="POST">
+        <label for="restaurant_id">Restaurant ID:</label><br>
+        <input type="text" id="restaurant_id" name="restaurant_id" required><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="borough">Borough:</label><br>
+        <input type="text" id="borough" name="borough"><br>
+        <label for="cuisine">Cuisine:</label><br>
+        <input type="text" id="cuisine" name="cuisine"><br>
+        <label for="building">Building:</label><br>
+        <input type="text" id="building" name="building"><br>
+        <label for="street">Street:</label><br>
+        <input type="text" id="street" name="street"><br>
+        <label for="zipcode">Zipcode:</label><br>
+        <input type="text" id="zipcode" name="zipcode"><br>
+        <input type="submit" value="Update Restaurant">
+    </form>
+</body>
+</html> --}}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Update Restaurant</h1>
+    <form action="/api/restaurants/{{restaurant._id}}" method="POST">
+        <input type="hidden" name="token" value="{{token}}">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{restaurant.name}}"><br>
+        <label for="borough">Borough:</label><br>
+        <input type="text" id="borough" name="borough" value="{{restaurant.borough}}"><br>
+        <label for="cuisine">Cuisine:</label><br>
+        <input type="text" id="cuisine" name="cuisine"><br>
+        <label for="building">Building:</label><br>
+        <input type="text" id="building" name="building"><br>
+        <label for="street">Street:</label><br>
+        <input type="text" id="street" name="street"><br>
+        <label for="zipcode">Zipcode:</label><br>
+        <input type="text" id="zipcode" name="zipcode"><br>       
+        <input type="submit" value="Update Restaurant">
+    </form>
+</body>
+</html>
